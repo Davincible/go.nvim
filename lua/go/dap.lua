@@ -349,9 +349,10 @@ M.run = function(...)
         end)
       end
 
-      stdout:close()
-      stderr:close()
-      handle:close()
+      _ = stdout and stdout:close()
+      _ = stderr and stderr:close()
+      _ = handle and handle:close()
+
       stdout = nil
       stderr = nil
       handle = nil
